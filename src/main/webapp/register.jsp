@@ -5,12 +5,12 @@
     <title>register</title>
 </head>
 <body>
-<form method="post">
-    Username:<input type="text" name="username" placeholder="Username"><br/>
+<form method="post" action="register">
+    Username:<input type="text" name="Username" placeholder="Username"><br/>
     Password:<input type="password" name="Password" placeholder="Password"><br/>
     Email:<input type="text" name="Email" placeholder="Email"><br/>
-    Gender:<input type="radio" name="Gender">Male<input type="radio" name="Gender">Female<br/>
-    Date of Birth:<input type="text" name="Email" placeholder="Date of Birth(yyyy-mm-dd)"><br/>
+    Gender:<input type="radio" name="Gender" value="male">Male<input type="radio" name="Gender"value="female">Female<br/>
+    Birthdate:<input type="text" name="Email" placeholder="Birthdate(yyyy-mm-dd)"><br/>
     <input type="submit" name="register" value="register">
 </form>
 </body>
