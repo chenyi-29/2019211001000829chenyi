@@ -8,6 +8,12 @@
 <%@include file="header.jsp"%>
 
 <form method="post" action="login">
+    <%
+        if(! (request.getAttribute("message")==null)){
+            out.println(request.getAttribute("message"));
+        }
+
+    %>
     Username:<input type="text" name="Username" placeholder="Username"><br/>
     Password:<input type="password" name="Password" placeholder="Password"><br/>
     <input type="submit" name="login" value="login">

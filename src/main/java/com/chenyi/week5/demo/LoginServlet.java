@@ -41,9 +41,21 @@ public class LoginServlet extends HttpServlet {
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            String sql = "select * from usertable";
+            String sql = "select * from usertable ";
             try {
                 ResultSet rs = con.createStatement().executeQuery(sql);
+                if(rs.next()){
+                    request.setAttribute("id",rs.getInt("id"));
+                    request.setAttribute("Username",rs.getString("Username"));
+                    request.setAttribute("password",rs.getString("Password"));
+                    request.setAttribute("Email",rs.getString("Email"));
+                    request.setAttribute("Gender",rs.getString("Gender"));
+                    request.setAttribute("birthdate",rs.getString("birthdate"));
+                    request.getRequestDispatcher("userinfo.jsp").forward(request,response);
+                }else{
+                    request.setAttribute("message","Username or password error!!");
+                    request.getRequestDispatcher("login.jsp").forward(request,response);
+                }
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
