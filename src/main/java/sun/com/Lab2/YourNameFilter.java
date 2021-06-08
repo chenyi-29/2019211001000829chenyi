@@ -1,11 +1,11 @@
-package com.chenyi.filter;
+package sun.com.Lab2;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthFilter")
-public class AuthFilter implements Filter {
+@WebFilter(filterName = "YourNameFilter")
+public class YourNameFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
 
@@ -14,8 +14,8 @@ public class AuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        System.out.println("I am in AuthFilter --->doFilter()-before servlet(request) ");
+        System.out.println("YourNameFilter-->before chain");
         chain.doFilter(request, response);
-        System.out.println("I am in AuthFilter --->doFilter()-after servlet (response)");
+        System.out.println("YourNameFilter-->after chain");
     }
 }
